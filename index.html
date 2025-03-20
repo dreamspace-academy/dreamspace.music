@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DreamSpace Records - Empowering Musicians, Transforming Lives</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">
+                <img src="./assets/images/wite.png"  alt="DreamSpace Records Logo" class="logo">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="about.html" id="navbarDropdown" role="button">
+                            About
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <li><a class="dropdown-item" href="about.html#about-us">About Us</a></li>
+                            <li><a class="dropdown-item" href="about.html#achievements">Achievements</a></li>
+                            <li><a class="dropdown-item" href="about.html#artists">Artists</a></li>
+                            <li><a class="dropdown-item" href="about.html#mentors">Mentors</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#music-videos">Music Videos</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="services.html">Services</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#contact">Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section with Carousel -->
+    <section class="hero-section">
+        <div id="heroCarousel" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img src="./assets/images/carousel-1.jpg" class="d-block w-100" alt="DreamSpace Records">
+                </div>
+                <div class="carousel-item">
+                    <img src="./assets/images/carousel-2.jpg" class="d-block w-100" alt="Music Production">
+                </div>
+                <div class="carousel-item">
+                    <img src="./assets/images/carousel-3.jpg" class="d-block w-100" alt="Live Performance">
+                </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#heroCarousel" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#heroCarousel" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
+            
+            <!-- Fixed hero content -->
+            <div class="fixed-hero-content">
+                <img src="./assets/images/wite.png" alt="DreamSpace Records Logo" class="hero-logo" data-aos="fade-down">
+                <h1 class="slogan" data-aos="fade-up" style="color: white;">Empowering Musicians, Transforming Lives</h1>
+            </div>
+        </div>
+    </section>
+
+    <!-- Latest Music Videos Section -->
+    <section class="latest-videos-section" id="music-videos">
+        <div class="container">
+            <div class="section-title">
+                <h2>Latest Music Videos</h2>
+                <div class="sound-wave">
+                    <span></span><span></span><span></span><span></span><span></span>
+                </div>
+                <p>Watch. Listen. Repeat.</p>
+            </div>
+            <div class="row">
+                <div class="col-md-4" data-aos="fade-up" data-aos-delay="100">
+                    <!-- Music Video Card -->
+                    <div class="music-card">
+                        <div class="music-thumbnail">
+                        <img src="./assets/images/paadum-meene.jpg" alt="Music Video Thumbnail">
+                        </div>
+                        <div class="music-info">
+                        <p class="music-title">Paadum Meene</p>
+                        <p class="music-description">Dinoj M’s 'Paadum Meene' blends Singing Fish sounds with Carnatic music and Hip-Hop, reflecting Batticaloa's rich heritage.</p>
+                        </div>
+                        <div class="music-footer">
+                        <a href="#" class="watch-now">Watch Now</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
+                    <div class="music-card">
+                        <div class="music-thumbnail">
+                        <img src="./assets/images/aram-sei.jpg" alt="Music Video Thumbnail">
+                        </div>
+                        <div class="music-info">
+                        <p class="music-title">Aram Sei</p>
+                        <p class="music-description">SajaS' rap 'Aram Sei' electrifies listeners, celebrating Tamil identity and resilience with a bold, inspiring message.</p>
+                        </div>
+                        <div class="music-footer">
+                        <a href="#" class="watch-now">Watch Now</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4" data-aos="fade-up" data-aos-delay="300">
+                    <div class="music-card">
+                        <div class="music-thumbnail">
+                        <img src="./assets/images/mellidai-mettu.jpg" alt="Music Video Thumbnail">
+                        </div>
+                        <div class="music-info">
+                        <p class="music-title">Mellidai Mettu</p>
+                        <p class="music-description">SajaS, a DreamSpace student trained by Navz-47, debuts "Mellidai Mettu," a tribute to the strength and resilience of women.</p>
+                        </div>
+                        <div class="music-footer">
+                        <a href="#" class="watch-now">Watch Now</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="text-center mt-5" data-aos="fade-up">
+                <a href="#" class="watch-now2">Watch All Music Videos</a>
+            </div>
+        </div>
+    </section>
+    
+<!-- Contact Section -->
+    <!-- <section class="contact-section">
+        <div class="container">
+            <div class="section-title">
+                <h2>Let's Connect</h2>
+                <div class="sound-wave">
+                    <span></span><span></span><span></span><span></span><span></span>
+                </div>
+                <p>Reach out to us for collaborations, inquiries, or just to say hello!</p>
+            </div>
+            <div class="row">
+                <div class="col-lg-5" data-aos="fade-right">
+                    <div class="contact-info">
+                        <h3>Get In Touch</h3>
+
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-envelope"></i>
+                            </div>
+                            <div class="contact-text">
+                                <h4>Email</h4>
+                                <p><a href="mailto:info@dreamspace.music">info@dreamspace.music</a></p>
+                            </div>
+                        </div>
+
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-map-marker-alt"></i>
+                            </div>
+                            <div class="contact-text">
+                                <h4>Address</h4>
+                                <p>7th Cross, New Dutch Bar Road, Kallady, Batticaloa</p>
+                            </div>
+                        </div>
+
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-share-alt"></i>
+                            </div>
+                            <div class="contact-text">
+                                <h4>Social Media</h4>
+                                <div class="social-links">
+                                    <a href="https://www.facebook.com/dreamspacerecords.lk" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                                    <a href="https://www.youtube.com/@DreamSpaceRecords-lk" target="_blank"><i class="fab fa-youtube"></i></a>
+                                    <a href="https://www.instagram.com/" target="_blank"><i class="fab fa-instagram"></i></a>
+                                    <a href="https://open.spotify.com/" target="_blank"><i class="fab fa-spotify"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-7" data-aos="fade-left">
+                    <div class="contact-form">
+                        <h3>Send Us A Message</h3>
+                        <form id="contactForm">
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <input type="text" class="form-control" id="name" placeholder="Your Name" required>
+                                </div>
+                                <div class="col-md-6">
+                                    <input type="email" class="form-control" id="email" placeholder="Your Email" required>
+                                </div>
+                            </div>
+                            <input type="text" class="form-control" id="subject" placeholder="Subject">
+                            <textarea class="form-control" id="message" rows="5" placeholder="Your Message" required></textarea>
+                            <button type="submit" class="btn btn-primary submit-btn">Send Message</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section> -->
+
+<!-- Contact Section -->
+    <section id="contact" class="nw-contact section">
+
+            <!-- Section Title -->
+        <div class="container nw-section-title" data-aos="fade-up">
+            <h2>Let's Connect</h2>
+            <div class="nw-sound-wave">
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            </div>
+            <p>Reach out to us for collaborations, inquiries, or just to say hello!</p>
+        </div><!-- End Section Title -->
+    
+    
+        <div class="container" data-aos="fade" data-aos-delay="100">
+    
+        <div class="row gy-4">
+    
+            <div class="col-lg-4">
+            <div class="nw-info-item d-flex" data-aos="fade-up" data-aos-delay="200">
+                <i class="bi bi-geo-alt flex-shrink-0"></i>
+                <div>
+                <h3>Address</h3>
+                <p>7th Cross, New Dutch Bar Road,</p>
+                <p>Kallady, Batticaloa</p>
+                </div>
+            </div><!-- End Info Item -->
+    
+            <div class="nw-info-item d-flex" data-aos="fade-up" data-aos-delay="400">
+                <i class="bi bi-envelope flex-shrink-0"></i>
+                <div>
+                <h3>Email Us</h3>
+                <p>info@dreamspace.music</p>
+                </div>
+            </div><!-- End Info Item -->
+    
+            </div>
+    
+            <div class="col-lg-8">
+            <form action="forms/contact.php" method="post" class="nw-php-email-form" data-aos="fade-up" data-aos-delay="200">
+                <div class="row gy-4">
+    
+                <div class="col-md-6">
+                    <input type="text" name="name" class="form-control" placeholder="Your Name" required="">
+                </div>
+    
+                <div class="col-md-6 ">
+                    <input type="email" class="form-control" name="email" placeholder="Your Email" required="">
+                </div>
+    
+                <div class="col-md-12">
+                    <input type="text" class="form-control" name="subject" placeholder="Subject" required="">
+                </div>
+    
+                <div class="col-md-12">
+                    <textarea class="form-control" name="message" rows="6" placeholder="Message" required=""></textarea>
+                </div>
+    
+                <div class="col-md-12 text-center">
+                    <button type="submit">Send Message</button>
+                </div>
+    
+                </div>
+            </form>
+            </div><!-- End Contact Form -->
+    
+        </div>
+    
+        </div>
+    
+    </section>
+  <!-- /Contact Section -->
+  
+    
+
+<!-- Map Section -->
+    <!-- <section class="map-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-12" data-aos="fade-up">
+                    <div class="map-container">
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3957.5768476673033!2d81.7!3d7.7!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zN8KwNDInMDAuMCJOIDgxwrA0MicwMC4wIkU!5e0!3m2!1sen!2sus!4v1635000000000!5m2!1sen!2sus" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section> -->
+
+    <!-- Footer -->
+    <!-- <footer class="glass-footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4">
+                    <img src="/placeholder.svg?height=80&width=200" alt="DreamSpace Records Logo" class="footer-logo">
+                    <p>Empowering Musicians, Transforming Lives</p>
+                </div>
+                <div class="col-md-4">
+                    <h4>Quick Links</h4>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="music-videos.html">Music Videos</a></li>
+                        <li><a href="services.html">Services</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-4">
+                    <h4>Connect With Us</h4>
+                    <div class="social-icons">
+                        <a href="https://open.spotify.com/" target="_blank"><i class="fab fa-spotify"></i></a>
+                        <a href="https://www.youtube.com/@DreamSpaceRecords-lk" target="_blank"><i class="fab fa-youtube"></i></a>
+                        <a href="https://www.instagram.com/" target="_blank"><i class="fab fa-instagram"></i></a>
+                        <a href="https://www.facebook.com/dreamspacerecords.lk" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                        <a href="https://www.linkedin.com/" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2023 DreamSpace Records. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer> -->
+
+    <!-- Transparent Footer -->
+        <!-- <footer class="glass-footer">
+            <div class="container text-center">
+                <div class="row">
+                    <div class="col-md-12">
+                        <p>&copy; Dreamspace Records. All rights reserved </p>
+                    </div>
+                    <div class="col-md-12">
+                        <div class="social-icons">
+                            <a href="https://open.spotify.com/" target="_blank"><i class="fab fa-spotify"></i></a>
+                            <a href="https://www.youtube.com/@DreamSpaceRecords-lk" target="_blank"><i class="fab fa-youtube"></i></a>
+                            <a href="https://www.instagram.com/" target="_blank"><i class="fab fa-instagram"></i></a>
+                            <a href="https://www.facebook.com/dreamspacerecords.lk" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                            <a href="https://www.linkedin.com/" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer> -->
+
+        <!-- Transparent Footer -->
+<!-- <footer class="glass-footer">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-md-6 text-md-center text-center">
+                <p>&copy; ARRahman. All rights reserved | <a href="terms.html">Terms</a></p>
+            </div>
+            <div class="col-md-6 text-md-end text-center">
+                <div class="social-icons">
+                    <a href="https://open.spotify.com/" target="_blank"><i class="fab fa-spotify"></i></a>
+                    <a href="https://www.youtube.com/@DreamSpaceRecords-lk" target="_blank"><i class="fab fa-youtube"></i></a>
+                    <a href="https://www.instagram.com/" target="_blank"><i class="fab fa-instagram"></i></a>
+                    <a href="https://www.facebook.com/dreamspacerecords.lk" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                    <a href="https://www.linkedin.com/" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer> -->
+
+<footer class="glass-footer">
+    <div class="container">
+        <div class="footer-bottom">
+            <p class="design-by">
+                Designed by Dreamspace Technologies
+            </p>            
+            <p class="copyright">&copy;2025 DreamSpace Records. All Rights Reserved.</p>
+            <div class="social-icons">
+                <a href="https://open.spotify.com/" target="_blank"><i class="fab fa-spotify"></i></a>
+                <a href="https://www.youtube.com/@DreamSpaceRecords-lk" target="_blank"><i class="fab fa-youtube"></i></a>
+                <a href="https://www.instagram.com/" target="_blank"><i class="fab fa-instagram"></i></a>
+                <a href="https://www.facebook.com/dreamspacerecords.lk" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                <a href="https://www.linkedin.com/" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<div class="cursor-container">
+    <div class="cursor-trail"></div>
+    <div class="cursor"></div>
+</div>
+
+</style>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
+
