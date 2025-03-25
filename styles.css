@@ -363,7 +363,7 @@ a:hover {
   left: 50%;
   width: 0;
   height: 2px;
-  background-color: var(--primary-color);
+  background-color: white;
   transition: var(--transition);
   transform: translateX(-50%);
 }
@@ -412,8 +412,8 @@ a:hover {
 
 /* Add hover effect with slight movement */
 .dropdown-item:hover {
-  background-color: var(--primary-color);
-  color: white;
+  background-color: white;
+  color: #3b0439
   transform: translateX(8px);
 }
 
