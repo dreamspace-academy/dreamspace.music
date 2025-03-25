@@ -2165,7 +2165,8 @@ a:hover {
 }
 
 .social-icons a:hover {
-  background-color: var(--primary-color);
+  background-color: black;
+  color: white;
   transform: translateY(-3px);
 }
 
