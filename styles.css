@@ -7,11 +7,33 @@
   --transition: all 0.3s ease;
 }
 
+/* Apply background image, blur and overlay to the entire body */
 body {
   font-family: "Poppins", sans-serif;
-  background-color: #ffffff;
   color: var(--dark-color);
   overflow-x: hidden;
+  position: relative;
+  background: url("./assets/images/bg-1.jpg") no-repeat center center / cover;
+  background-attachment: fixed;
+}
+
+/* Add overlay and blur to the entire body */
+body::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  background: rgba(0, 0, 0, 0.5);
+  z-index: -1;
+}
+
+/* Adjust text colors for better visibility on dark background */
+body {
+  color: white;
 }
 
 h1,
@@ -21,6 +43,7 @@ h4,
 h5,
 h6 {
   font-weight: 700;
+  color: white;
 }
 
 a {
@@ -33,10 +56,72 @@ a:hover {
   color: var(--secondary-color);
 }
 
+/* Adjust section backgrounds for better contrast */
+.section {
+  position: relative;
+  z-index: 1;
+}
 
-/*--------------------------------------------------------------
-# Section Title - Animated Sound Wave
---------------------------------------------------------------*/
+/* Make all sections have consistent styling */
+.latest-videos-section,
+.about-section,
+.achievements-section,
+.artists-section,
+.mentors-section,
+.music-videos-gallery,
+.services-section,
+.contact-section,
+#nw-gallery,
+#imageGallery {
+  position: relative;
+  z-index: 1;
+}
+
+/* Add subtle section separators */
+.latest-videos-section,
+.achievements-section,
+.mentors-section {
+  background-color: rgba(255, 255, 255, 0.05);
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Make card backgrounds slightly transparent */
+.card,
+.video-card,
+.artist-card,
+.service-card,
+.achievement-card,
+.mentor-card,
+.about-image,
+.contact-info,
+.contact-form {
+  background-color: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Adjust text colors in cards for better visibility */
+.card h3,
+.video-card h3,
+.artist-card h3,
+.service-card h3,
+.achievement-card h3,
+.mentor-card h3 {
+  color: white;
+}
+
+.card p,
+.video-card p,
+.artist-card p,
+.service-card p,
+.achievement-card p,
+.mentor-card p {
+  color: rgba(255, 255, 255, 0.8);
+}
+
+/* Section Title - Animated Sound Wave */
 .section-title {
   text-align: center;
   padding-bottom: 20px;
@@ -46,7 +131,7 @@ a:hover {
 .section-title h2 {
   font-size: 36px;
   font-weight: 700;
-  color: #222; /* Dark text for contrast */
+  color: white; /* Changed to white for better visibility */
   text-transform: uppercase;
   letter-spacing: 2px;
   margin-bottom: 20px;
@@ -66,7 +151,7 @@ a:hover {
   display: inline-block;
   width: 6px;
   height: 10px;
-  background: #720CBE;  /* Your required color */
+  background: #ffffff; /* Changed to white for better visibility */
   animation: waveMotion 1s infinite ease-in-out alternate;
   border-radius: 3px;
 }
@@ -107,7 +192,7 @@ a:hover {
 /* Subtitle Text */
 .section-title p {
   font-size: 18px;
-  color: #555;
+  color: rgba(255, 255, 255, 0.8); /* Changed for better visibility */
   max-width: 600px;
   margin: 10px auto 0;
   line-height: 1.6;
@@ -126,7 +211,7 @@ a:hover {
 }
 
 .cursor {
-  position: fixed; /* Change from absolute to fixed */
+  position: fixed;
   width: 20px;
   height: 20px;
   background-color: #720cbe;
@@ -137,7 +222,7 @@ a:hover {
 }
 
 .cursor-trail {
-  position: fixed; /* Change from absolute to fixed */
+  position: fixed;
   width: 40px;
   height: 40px;
   border: 2px solid #ff6d00;
@@ -148,7 +233,7 @@ a:hover {
 }
 
 .music-note {
-  position: fixed; /* This is set in JS now, but good to have here too */
+  position: fixed;
   font-size: 24px;
   pointer-events: none;
   animation: float 2s cubic-bezier(0.25, 0.1, 0.25, 1) forwards;
@@ -167,7 +252,7 @@ a:hover {
 }
 
 .wave {
-  position: fixed; /* This is set in JS now, but good to have here too */
+  position: fixed;
   border-radius: 50%;
   transform: translate(-50%, -50%);
   pointer-events: none;
@@ -186,82 +271,79 @@ a:hover {
 
 @keyframes float {
   0% {
-      transform: translate(0, 0) rotate(0deg) scale(0.5);
-      opacity: 0.9;
+    transform: translate(0, 0) rotate(0deg) scale(0.5);
+    opacity: 0.9;
   }
   20% {
-      opacity: 1;
+    opacity: 1;
   }
   100% {
-      transform: translate(var(--x), var(--y)) rotate(var(--r)) scale(1.2);
-      opacity: 0;
+    transform: translate(var(--x), var(--y)) rotate(var(--r)) scale(1.2);
+    opacity: 0;
   }
 }
 
 @keyframes wave {
   0% {
-      width: 0px;
-      height: 0px;
-      opacity: 0.7;
+    width: 0px;
+    height: 0px;
+    opacity: 0.7;
   }
   50% {
-      opacity: 0.5;
+    opacity: 0.5;
   }
   100% {
-      width: 200px;
-      height: 200px;
-      opacity: 0;
+    width: 200px;
+    height: 200px;
+    opacity: 0;
   }
 }
 
 @media (max-width: 768px) {
   .cursor {
-      width: 15px;
-      height: 15px;
+    width: 15px;
+    height: 15px;
   }
-  
+
   .cursor-trail {
-      width: 30px;
-      height: 30px;
+    width: 30px;
+    height: 30px;
   }
-  
+
   .music-note {
-      font-size: 20px;
+    font-size: 20px;
   }
-  
+
   @keyframes wave {
-      100% {
-          width: 150px;
-          height: 150px;
-      }
+    100% {
+      width: 150px;
+      height: 150px;
+    }
   }
 }
-
-
-/* Navbar Styles */
 
 /* Navbar Styles */
 .navbar {
   background-color: transparent;
-  padding: 0.5rem 0; /* Reduced padding for a smaller navbar */
+  padding: 0.5rem 0;
   transition: var(--transition);
-  backdrop-filter: blur(0px);
-  -webkit-backdrop-filter: blur(0px);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  z-index: 1000;
 }
 
 .navbar .container {
   flex-direction: row;
 }
+
 .navbar.scrolled {
   background-color: rgba(1, 1, 1, 0.7);
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
 }
 
 /* Adjusted logo size */
 .navbar-brand img.logo {
-  height: 50px; /* Reduced logo height */
+  height: 50px;
   transition: var(--transition);
 }
 
@@ -346,27 +428,24 @@ a:hover {
   opacity: 1;
 }
 
-
-/* When the navbar is scrolled, change background color to white */
+/* When the navbar is scrolled, change background color */
 .navbar.scrolled {
-  background-color: white !important;
+  background-color: rgba(1, 1, 1, 0.7) !important;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
 }
 
 /* Adjust text color for scrolled navbar */
 .navbar.scrolled .nav-link {
-  color: purple !important;
+  color: white !important;
 }
 
 /* Navbar toggler color change when scrolled */
 .navbar.scrolled .navbar-toggler {
-  border-color: purple;
+  border-color: white;
 }
 
 .navbar.scrolled .navbar-toggler-icon {
-  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='purple' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='white' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
 }
 
 /* Mobile Navbar */
@@ -376,17 +455,17 @@ a:hover {
     padding: 1rem;
     border-radius: 0.5rem;
   }
-  .navbar .container{
+  .navbar .container {
     flex-direction: row;
   }
 }
-
 
 /* Hero Section Styles */
 .hero-section {
   position: relative;
   height: 100vh;
   overflow: hidden;
+  z-index: 1;
 }
 
 .carousel-item {
@@ -438,20 +517,29 @@ a:hover {
 }
 
 /* Latest Videos Section Styles */
+/* Adjust background to be transparent with a slight overlay */
+.latest-videos-section {
+  padding: 2.5rem 0;
+  position: relative;
+  z-index: 1;
+}
 
 /* Music Video Card */
 .music-card {
   width: 360px;
   height: 410px;
   padding: 1em;
-  background: #ffffff;
-  color: #3b0439;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  color: white;
   position: relative;
   border-radius: 8px;
   overflow: hidden;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   text-align: center;
   padding-bottom: 50px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .music-thumbnail {
@@ -480,11 +568,12 @@ a:hover {
   font-size: 1.2em;
   font-weight: bold;
   margin-bottom: 5px;
+  color: white;
 }
 
 .music-description {
   font-size: 0.9em;
-  color: #010101;
+  color: rgba(255, 255, 255, 0.8);
 }
 
 .music-footer {
@@ -502,6 +591,7 @@ a:hover {
   border-radius: 5px;
   transition: background 0.3s ease-in-out;
 }
+
 .watch-now2 {
   display: inline-block;
   padding: 8px 15px;
@@ -518,19 +608,16 @@ a:hover {
   background: #010101;
   color: white;
 }
+
 .watch-now2:hover {
   background: #010101;
   color: white;
 }
 
-
-.latest-videos-section {
-  padding: 2.5rem 0;
-  background-color: var(--light-color);
-}
-
 .video-card {
-  background-color: white;
+  background-color: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
   border-radius: 1rem;
   overflow: hidden;
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
@@ -539,6 +626,7 @@ a:hover {
   height: 100%;
   position: relative;
   z-index: 1;
+  border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .video-card::before {
@@ -622,11 +710,11 @@ a:hover {
 .video-info h3 {
   font-size: 1.5rem;
   margin-bottom: 0.5rem;
-  color: var(--secondary-color);
+  color: white;
 }
 
 .video-info p {
-  color: #666;
+  color: rgba(255, 255, 255, 0.8);
   margin-bottom: 1rem;
 }
 
@@ -679,10 +767,11 @@ a:hover {
 
 /* Page Header Styles */
 .page-header {
-  background-color: var(--secondary-color);
+  background-color: transparent;
   padding: 8rem 0 4rem;
   text-align: center;
   position: relative;
+  z-index: 1;
 }
 
 .page-header::before {
@@ -692,8 +781,9 @@ a:hover {
   left: 0;
   width: 100%;
   height: 100%;
-  background: linear-gradient(135deg, rgba(240, 108, 7, 0.8) 0%, rgba(66, 55, 106, 0.8) 100%);
+  background: linear-gradient(135deg, rgba(240, 108, 7, 0.4) 0%, rgba(66, 55, 106, 0.4) 100%);
   opacity: 0.8;
+  z-index: -1;
 }
 
 .page-header h1 {
@@ -704,20 +794,43 @@ a:hover {
 }
 
 .sub-page-header {
-  background-color: var(--secondary-color);
-  background-image: url('assets/images/sub-bg.jpg'); /* Replace with your image path */
-  background-size: cover; /* Ensures the image covers the section */
-  background-position: center; /* Centers the image */
-  background-repeat: no-repeat; /* Prevents the image from repeating */
+  background-color: transparent;
   padding: 8rem 0 4rem;
   text-align: center;
   position: relative;
-  color: #fff; /* Optional: change text color to white to contrast with the background */
+  z-index: 1;
 }
 
-/* About Section Styles */
+.sub-page-header::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, rgba(240, 108, 7, 0.4) 0%, rgba(66, 55, 106, 0.4) 100%);
+  opacity: 0.8;
+  z-index: -1;
+}
+
+/* About Section Styles - Redesigned to match contact section */
 .about-section {
   padding: 2rem 0;
+  padding-top: 6rem;
+  position: relative;
+  z-index: 1;
+}
+
+/* Add a subtle overlay to the about section */
+.about-section::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.1);
+  z-index: -1;
 }
 
 .about-section p {
@@ -725,6 +838,7 @@ a:hover {
   line-height: 1.8;
   margin-bottom: 1.5rem;
   text-align: center;
+  color: rgba(255, 255, 255, 0.9);
 }
 
 .about-section h3 {
@@ -732,11 +846,16 @@ a:hover {
   margin-bottom: 1rem;
 }
 
+/* Redesigned about image to match contact section */
 .about-image {
   margin-top: 2rem;
   overflow: hidden;
   border-radius: 1rem;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  background-color: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .about-image img {
@@ -747,8 +866,7 @@ a:hover {
   transform: scale(1.05);
 }
 
-
-/* mission & vision section */
+/* Redesigned mission & vision section to match contact section */
 .nw-section {
   display: flex;
   justify-content: space-between;
@@ -756,10 +874,14 @@ a:hover {
   padding: 0 100px;
   flex-wrap: wrap;
   align-items: flex-start;
+  position: relative;
+  z-index: 1;
 }
 
 .nw-card {
-  background: #3b0439;
+  background: transparent;
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
   position: relative;
   display: flex;
   justify-content: center;
@@ -769,10 +891,11 @@ a:hover {
   margin: 15px 0;
   box-sizing: border-box;
   width: 100%;
-  height: 300px; /* Fixed height for large screens */
-  max-width: 550px; /* Max width for large screens */
+  height: 300px;
+  max-width: 550px;
   padding: 20px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
+  border: 1px solid rgb(255, 255, 255);
 }
 
 .nw-card-content {
@@ -785,6 +908,7 @@ a:hover {
   font-size: 2em;
   margin: 0;
   padding: 5px 0;
+  color: white;
 }
 
 .nw-card p {
@@ -792,13 +916,14 @@ a:hover {
   line-height: 1.6;
   margin: 10px 0;
   text-align: justify;
+  color: rgba(255, 255, 255, 0.9);
 }
 
 .nw-card::before {
-  content: '';
+  content: "";
   position: absolute;
   width: 100px;
-  background-image: linear-gradient(180deg, rgb(255, 255, 255), rgb(255, 255, 255));
+  /* background-image: linear-gradient(180deg, rgb(255, 255, 255), rgb(255, 255, 255)); */
   height: 230%;
   animation: rotBGimg 15s linear infinite;
   transition: all 0.2s linear;
@@ -814,9 +939,11 @@ a:hover {
 }
 
 .nw-card::after {
-  content: '';
+  content: "";
   position: absolute;
-  background: #3b0439;
+  background: rgb(255 255 255 / 5%);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
   inset: 5px;
   border-radius: 15px;
 }
@@ -826,32 +953,42 @@ a:hover {
   .nw-section {
     flex-direction: column;
     align-items: center;
-    padding: 0 20px; /* Reduced padding on small screens */
+    padding: 0 20px;
   }
 
   .nw-card {
-    width: 100%; /* Full width on smaller screens */
-    max-width: none; /* No max width restriction */
-    height: auto; /* Allow the height to adjust automatically */
-    padding: 15px; /* Adjust padding for smaller screens */
+    width: 100%;
+    max-width: none;
+    height: auto;
+    padding: 15px;
   }
 
   .nw-card h2 {
-    font-size: 1.5em; /* Smaller font size on small screens */
+    font-size: 1.5em;
   }
 
   .nw-card p {
-    font-size: 0.9em; /* Smaller text size for better readability */
+    font-size: 0.9em;
   }
 }
-
-
-
 
 /* Achievements Section Styles */
 .achievements-section {
   padding: 2rem 0;
-  background-color: #f9f9f9;
+  position: relative;
+  z-index: 1;
+}
+
+/* Add a subtle overlay to the achievements section */
+.achievements-section::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.1);
+  z-index: -1;
 }
 
 .section-intro {
@@ -859,16 +996,20 @@ a:hover {
   max-width: 800px;
   margin: 0 auto 3rem;
   font-size: 1.2rem;
+  color: rgba(255, 255, 255, 0.9);
 }
 
 .achievement-card {
-  background-color: #3b0439;
+  /* background-color: rgba(59, 4, 57, 0.7); */
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
   padding: 2rem;
   border-radius: 1rem;
   text-align: center;
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
   transition: var(--transition);
   height: 100%;
+  border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .achievement-card:hover {
@@ -879,8 +1020,8 @@ a:hover {
 .achievement-icon {
   width: 80px;
   height: 80px;
-  background-color: #ffffff;
-  color: #3b0439;
+  background-color: rgba(255, 255, 255, 0.2);
+  color: white;
   border-radius: 50%;
   display: flex;
   align-items: center;
@@ -906,15 +1047,18 @@ a:hover {
 }
 
 .achievement-item {
-  background-color: white;
+  background-color: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
   padding: 2rem;
   border-radius: 1rem;
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
   margin-bottom: 2rem;
+  border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .achievement-item h3 {
-  color: var(--secondary-color);
+  color: white;
   margin-bottom: 1rem;
 }
 
@@ -944,7 +1088,21 @@ a:hover {
   align-items: center;
   height: 100vh;
   margin: 0;
-  background-color: #ddd;
+  background-color: transparent;
+  position: relative;
+  z-index: 1;
+}
+
+/* Add overlay to image gallery */
+#imageGallery::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.1);
+  z-index: -1;
 }
 
 /* Grid container */
@@ -959,12 +1117,15 @@ a:hover {
 
 /* Individual image boxes */
 #imageGallery .box {
-  background-color: white;
+  background-color: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
   box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.2);
   overflow: hidden;
   display: flex;
   justify-content: center;
   align-items: center;
+  border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 /* Image Styling */
@@ -976,61 +1137,98 @@ a:hover {
 }
 
 /* Grid layout for big screens */
-#imageGallery .box1 { grid-column: 1; grid-row: 1; }
-#imageGallery .box2 { grid-column: 2; grid-row: 1; }
-#imageGallery .box3 { grid-column: 3 / 5; grid-row: 1; }
-#imageGallery .box4 { grid-column: 1 / 3; grid-row: 2 / 4; } /* Large box */
-#imageGallery .box5 { grid-column: 3; grid-row: 2; }
-#imageGallery .box6 { grid-column: 4; grid-row: 2 / 4; } /* Tall box */
-#imageGallery .box7 { grid-column: 3; grid-row: 3; }
-#imageGallery .box8 { grid-column: 4; grid-row: 3; }
+#imageGallery .box1 {
+  grid-column: 1;
+  grid-row: 1;
+}
+#imageGallery .box2 {
+  grid-column: 2;
+  grid-row: 1;
+}
+#imageGallery .box3 {
+  grid-column: 3 / 5;
+  grid-row: 1;
+}
+#imageGallery .box4 {
+  grid-column: 1 / 3;
+  grid-row: 2 / 4;
+} /* Large box */
+#imageGallery .box5 {
+  grid-column: 3;
+  grid-row: 2;
+}
+#imageGallery .box6 {
+  grid-column: 4;
+  grid-row: 2 / 4;
+} /* Tall box */
+#imageGallery .box7 {
+  grid-column: 3;
+  grid-row: 3;
+}
+#imageGallery .box8 {
+  grid-column: 4;
+  grid-row: 3;
+}
 
 /* RESPONSIVE DESIGN */
 @media (max-width: 768px) {
   #imageGallery {
-      height: auto;
-      padding: 20px;
+    height: auto;
+    padding: 20px;
   }
 
   #imageGallery .gallery {
-      display: grid;
-      grid-template-columns: 1fr;
-      gap: 15px;
-      width: 90%;
-      height: auto;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 15px;
+    width: 90%;
+    height: auto;
   }
 
   #imageGallery .box {
-      height: 200px;
-      border-radius: 10px;
+    height: 200px;
+    border-radius: 10px;
   }
 
   /* Show only 4 images */
-  #imageGallery .box5, 
-  #imageGallery .box6, 
-  #imageGallery .box7, 
+  #imageGallery .box5,
+  #imageGallery .box6,
+  #imageGallery .box7,
   #imageGallery .box8 {
-      display: none;
+    display: none;
   }
 }
-
-
-
-
 
 /* Artists Section Styles */
 .artists-section {
   padding: 2rem 0;
+  position: relative;
+  z-index: 1;
+}
+
+/* Add overlay to artists section */
+.artists-section::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.1);
+  z-index: -1;
 }
 
 .artist-card {
-  background-color: white;
+  background-color: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
   border-radius: 1rem;
   overflow: hidden;
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
   transition: var(--transition);
   margin-bottom: 2rem;
   height: 100%;
+  border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .artist-card:hover {
@@ -1075,7 +1273,7 @@ a:hover {
 
 .artist-info h3 {
   font-size: 1.5rem;
-  color: var(--secondary-color);
+  color: white;
   margin-bottom: 0.5rem;
 }
 
@@ -1093,12 +1291,12 @@ a:hover {
   display: inline-block;
   width: 40px;
   height: 40px;
-  background-color: #f5f5f5;
+  background-color: rgba(255, 255, 255, 0.1);
   border-radius: 50%;
   text-align: center;
   line-height: 40px;
   margin-right: 0.5rem;
-  color: var(--secondary-color);
+  color: white;
   transition: var(--transition);
 }
 
@@ -1112,12 +1310,15 @@ a:hover {
 #profileCard {
   width: 220px;
   height: 290px;
-  background: white;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
   border-radius: 32px;
   padding: 3px;
   position: relative;
   box-shadow: #604b4a30 0px 70px 30px -50px;
   transition: all 0.5s ease-in-out;
+  border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 #profileCard .mail {
@@ -1165,7 +1366,7 @@ a:hover {
   bottom: 3px;
   left: 3px;
   right: 3px;
-  background: #3b0439;
+  background: rgba(59, 4, 57, 0.8);
   top: 80%;
   border-radius: 29px;
   z-index: 2;
@@ -1276,80 +1477,28 @@ a:hover {
   transition: all 0.5s ease-in-out, z-index 0.5s ease-in-out 0.1s;
 }
 
-/* #profileCard:hover .profile-pic:hover {
-  transform: scale(1.3);
-  border-radius: 0px;
-} */
-
 #profileCard:hover .profile-pic img {
   transform: scale(1.5);
   transition: all 0.5s ease-in-out 0.5s;
 }
 
-
-/* Mentors Section Styles */
-/* .mentors-section {
-  padding: 5rem 0;
-  background-color: #f9f9f9;
-}
-
-.mentor-card {
-  background-color: white;
-  border-radius: 1rem;
-  overflow: hidden;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-  transition: var(--transition);
-  margin-bottom: 2rem;
-  height: 100%;
-}
-
-.mentor-card:hover {
-  transform: translateY(-10px);
-  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
-}
-
-.mentor-image {
-  overflow: hidden;
-}
-
-.mentor-image img {
-  width: 100%;
-  transition: var(--transition);
-}
-
-.mentor-card:hover .mentor-image img {
-  transform: scale(1.1);
-}
-
-.mentor-info {
-  padding: 1.5rem;
-  text-align: center;
-}
-
-.mentor-info h3 {
-  font-size: 1.3rem;
-  color: var(--secondary-color);
-  margin-bottom: 0.5rem;
-}
-
-.mentor-info h4 {
-  font-size: 1rem;
-  color: var(--primary-color);
-  margin-bottom: 1rem;
-} */
-
-
 /* Mentors Section Styles */
 .mentors-section {
   padding: 2rem 0 5rem;
-  background-color: #f9f9f9;
+  position: relative;
+  z-index: 1;
 }
 
-.section-intro {
-  text-align: center;
-  max-width: 800px;
-  margin: 0 auto 3rem;
-  font-size: 1.2rem;
+/* Add overlay to mentors section */
+.mentors-section::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.1);
+  z-index: -1;
 }
 
 .mentor-col {
@@ -1359,7 +1508,9 @@ a:hover {
 
 .mentor-card {
   position: relative;
-  background-color: #3b0439;
+  /* background-color: rgba(59, 4, 57, 0.7); */
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
   border-radius: 1rem;
   text-align: center;
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
@@ -1368,37 +1519,29 @@ a:hover {
   display: flex;
   flex-direction: column;
   overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .mentor-card:hover {
   transform: translateY(-10px);
-  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+  /* box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1); */
 }
 
 /* Border animation effect */
 .mentor-card::before {
-  content: '';
+  content: "";
   position: absolute;
   width: 80px;
-  background-image: linear-gradient(180deg, rgb(255, 255, 255), rgb(255, 255, 255));
+  /* background-image: linear-gradient(180deg, rgb(255, 255, 255), rgb(255, 255, 255)); */
   height: 230%;
-  animation: rotBGimg 15s linear infinite;
+  /* animation: rotBGimg 15s linear infinite; */
   transition: all 0.2s linear;
 }
 
-@keyframes rotBGimg {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
-
 .mentor-card::after {
-  content: '';
+  content: "";
   position: absolute;
-  background: #3b0439;
+  background: rgba(59, 4, 57, 0.7);
   inset: 5px;
   border-radius: 15px;
 }
@@ -1453,7 +1596,7 @@ a:hover {
     flex: 0 0 100%;
     max-width: 100%;
   }
-  
+
   .mentor-card {
     max-width: 400px;
     margin: 0 auto;
@@ -1464,22 +1607,33 @@ a:hover {
   .mentor-image {
     height: 180px;
   }
-  
+
   .mentor-card h3 {
     font-size: 1.5rem;
   }
-  
+
   .mentor-card h4 {
     font-size: 1rem;
   }
 }
 
-
-
-
 /* Music Videos Gallery Styles */
 .music-videos-gallery {
   padding: 5rem 0;
+  position: relative;
+  z-index: 1;
+}
+
+/* Add overlay to music videos gallery */
+.music-videos-gallery::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.1);
+  z-index: -1;
 }
 
 .video-meta {
@@ -1487,7 +1641,7 @@ a:hover {
   justify-content: space-between;
   margin-bottom: 1rem;
   font-size: 0.9rem;
-  color: #777;
+  color: rgba(255, 255, 255, 0.7);
 }
 
 .video-meta span {
@@ -1503,10 +1657,26 @@ a:hover {
 /* Services Section Styles */
 .services-section {
   padding: 5rem 0;
+  position: relative;
+  z-index: 1;
+}
+
+/* Add overlay to services section */
+.services-section::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.1);
+  z-index: -1;
 }
 
 .service-card {
-  background-color: white;
+  background-color: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
   border-radius: 1rem;
   overflow: hidden;
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
@@ -1515,6 +1685,7 @@ a:hover {
   height: 100%;
   position: relative;
   z-index: 1;
+  border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .service-card::before {
@@ -1565,7 +1736,7 @@ a:hover {
 
 .service-info h3 {
   font-size: 1.5rem;
-  color: var(--secondary-color);
+  color: white;
   margin-bottom: 1rem;
 }
 
@@ -1587,9 +1758,22 @@ a:hover {
   transform: scale(1.05);
 }
 
-
 #nw-gallery {
-  padding: 20px 0; /* No padding on sides */
+  padding: 20px 0;
+  position: relative;
+  z-index: 1;
+}
+
+/* Add overlay to gallery section */
+#nw-gallery::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.1);
+  z-index: -1;
 }
 
 .gal-container {
@@ -1605,7 +1789,9 @@ a:hover {
 }
 
 .card {
-  background-color: #fff;
+  background-color: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
   height: 150px;
   width: 150px;
   flex: 1;
@@ -1615,6 +1801,7 @@ a:hover {
   align-items: center;
   justify-content: center;
   overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .card img {
@@ -1626,38 +1813,42 @@ a:hover {
 
 .card:hover {
   flex: 2;
-  background-color: #ffffff;
+  background-color: rgba(255, 255, 255, 0.2);
 }
 
 /* Responsive Design */
 @media (max-width: 768px) {
   .container {
-      flex-direction: column;
-      align-items: center;
+    flex-direction: column;
+    align-items: center;
   }
 
   .card {
-      width: 80%;
-      height: auto;
+    width: 80%;
+    height: auto;
   }
 }
-
 
 /* Contact Section Styles */
 .contact-section {
   padding: 2.5rem auto 8rem;
+  position: relative;
+  z-index: 1;
 }
 
 .contact-info {
-  background-color: white;
+  background-color: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
   padding: 5rem 2rem;
   border-radius: 1rem;
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
   height: 100%;
+  border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .contact-info h3 {
-  color: var(--secondary-color);
+  color: white;
   margin-bottom: 1.5rem;
   position: relative;
   padding-bottom: 0.5rem;
@@ -1695,19 +1886,28 @@ a:hover {
 
 .contact-text h4 {
   font-size: 1.1rem;
-  color: var(--secondary-color);
+  color: white;
   margin-bottom: 0.5rem;
 }
 
+.contact-text p {
+  color: rgba(255, 255, 255, 0.8);
+}
+
 .contact-form {
-  background-color: white;
+  background-color: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
   padding: 2rem;
   border-radius: 1rem;
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .form-control {
-  border: 1px solid #ddd;
+  background-color: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: white;
   border-radius: 0.5rem;
   padding: 0.75rem;
   margin-bottom: 1.5rem;
@@ -1716,6 +1916,11 @@ a:hover {
 .form-control:focus {
   border-color: var(--primary-color);
   box-shadow: 0 0 0 0.2rem rgba(240, 108, 7, 0.25);
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+.form-control::placeholder {
+  color: rgba(255, 255, 255, 0.7);
 }
 
 .submit-btn {
@@ -1742,12 +1947,12 @@ a:hover {
   display: inline-block;
   width: 50px;
   height: 50px;
-  background-color: #f5f5f5;
+  background-color: rgba(255, 255, 255, 0.1);
   border-radius: 50%;
   text-align: center;
   line-height: 50px;
   margin-right: 1rem;
-  color: var(--secondary-color);
+  color: white;
   font-size: 1.2rem;
   transition: var(--transition);
 }
@@ -1758,14 +1963,13 @@ a:hover {
   transform: translateY(-5px);
 }
 
-
 /* Footer Styles */
 .glass-footer {
-  background: rgba(1, 1, 1, 0.5); /* Reduced opacity */
+  background: rgba(1, 1, 1, 0.5);
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
   color: white;
-  padding: 1rem 0; /* Reduced padding */
+  padding: 1rem 0;
   position: fixed;
   bottom: 0;
   width: 100%;
@@ -1774,7 +1978,7 @@ a:hover {
 }
 
 .footer-logo {
-  height: 50px; /* Smaller logo */
+  height: 50px;
   margin-bottom: 0.3rem;
 }
 
@@ -1785,13 +1989,13 @@ a:hover {
 }
 
 .footer-links li {
-  margin-bottom: 0.2rem; /* Reduced spacing */
+  margin-bottom: 0.2rem;
 }
 
 .footer-links a {
   color: #ddd;
   transition: var(--transition);
-  font-size: 0.8rem; /* Smaller font */
+  font-size: 0.8rem;
 }
 
 .footer-links a:hover {
@@ -1805,7 +2009,7 @@ a:hover {
 
 .social-icons a {
   display: inline-block;
-  width: 30px; /* Smaller icons */
+  width: 30px;
   height: 30px;
   background-color: rgba(255, 255, 255, 0.1);
   border-radius: 50%;
@@ -1825,7 +2029,7 @@ a:hover {
 .footer-bottom {
   border-top: 1px solid rgba(255, 255, 255, 0.1);
   padding-top: 0.5rem;
-  font-size: 0.8rem; /* Smaller font */
+  font-size: 0.8rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -1852,7 +2056,7 @@ a:hover {
 }
 
 /* Responsive Styles */
-/* @media (max-width: 991.98px) {
+@media (max-width: 991.98px) {
   .navbar-collapse {
     background-color: rgba(1, 1, 1, 0.9);
     padding: 1rem;
@@ -1863,7 +2067,7 @@ a:hover {
     font-size: 2rem;
   }
 
-  .section-title {
+  .section-title h2 {
     font-size: 2rem;
   }
 }
@@ -1877,7 +2081,7 @@ a:hover {
     font-size: 1.5rem;
   }
 
-  .section-title {
+  .section-title h2 {
     font-size: 1.8rem;
   }
 
@@ -1922,7 +2126,6 @@ a:hover {
   width: 200%;
   height: 200%;
   background: radial-gradient(circle, rgba(240, 108, 7, 0.05) 0%, transparent 50%);
-  /* animation: rotate 30s linear infinite; */
   z-index: -1;
 }
 
@@ -1954,40 +2157,16 @@ a:hover {
   }
 }
 
-/*--------------------------------------------------------------
-# Contact Section
---------------------------------------------------------------*/
+/* Contact Section - Already has blur and overlay applied */
 .nw-contact {
   position: relative;
   color: white;
   text-align: center;
   padding: 80px 0;
-  background: url('./assets/images/bg-1.jpg') no-repeat center center/cover;
-  background-attachment: fixed;
-  overflow: hidden; /* Prevent background from affecting layout */
+  overflow: hidden;
 }
 
-.nw-contact::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  backdrop-filter: blur(10px); /* Apply fixed blur effect */
-  background: rgba(0, 0, 0, 0.5); /* Dark overlay to enhance visibility */
-  z-index: 1;
-  animation: none;
-}
-
-.nw-contact .container {
-  position: relative;
-  z-index: 2;
-}
-
-/*--------------------------------------------------------------
-# Contact Section - Section Title with Animated Sound Wave
---------------------------------------------------------------*/
+/* Keep the existing contact section styles as they already have the effect you want */
 .nw-section-title {
   text-align: center;
   padding-bottom: 40px;
@@ -1997,7 +2176,7 @@ a:hover {
 .nw-section-title h2 {
   font-size: 36px;
   font-weight: 700;
-  color: white; /* Change text color to white */
+  color: white;
   text-transform: uppercase;
   letter-spacing: 2px;
   margin-bottom: 20px;
@@ -2017,7 +2196,7 @@ a:hover {
   display: inline-block;
   width: 6px;
   height: 10px;
-  background: #ffffff; /* Change sound wave color to white */
+  background: #ffffff;
   animation: waveMotion 1s infinite ease-in-out alternate;
   border-radius: 3px;
 }
@@ -2039,141 +2218,125 @@ a:hover {
   animation-delay: 0.8s;
 }
 
-/* Keyframes for Wave Motion */
-@keyframes waveMotion {
-  0% {
-    height: 10px;
-    opacity: 0.8;
-  }
-  50% {
-    height: 20px;
-    opacity: 1;
-  }
-  100% {
-    height: 10px;
-    opacity: 0.8;
-  }
-}
-
 /* Subtitle Text */
 .nw-section-title p {
   font-size: 18px;
-  color: rgba(255, 255, 255, 0.8); /* Light white for the subtitle */
+  color: rgba(255, 255, 255, 0.8);
   max-width: 600px;
   margin: 10px auto 0;
   line-height: 1.6;
   font-weight: 300;
 }
 
-
 /* Contact Info */
 .nw-info-item {
-    display: flex;
-    align-items: center;
-    gap: 15px;
-    background: rgba(255, 255, 255, 0.1);
-    padding: 20px;
-    border-radius: 10px;
-    transition: 0.3s;
-    margin-bottom: 15px;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  background: rgba(255, 255, 255, 0.1);
+  padding: 20px;
+  border-radius: 10px;
+  transition: 0.3s;
+  margin-bottom: 15px;
 }
 
 .nw-info-item:hover {
-    background: rgba(255, 255, 255, 0.2);
+  background: rgba(255, 255, 255, 0.2);
 }
 
 .nw-info-item i {
-    color: white;
-    font-size: 24px;
-    background: rgba(255, 255, 255, 0.2);
-    padding: 10px;
-    border-radius: 50%;
+  color: white;
+  font-size: 24px;
+  background: rgba(255, 255, 255, 0.2);
+  padding: 10px;
+  border-radius: 50%;
 }
 
-.nw-info-item h3, 
+.nw-info-item h3,
 .nw-info-item p {
-    color: white;
-    text-align: start;
+  color: white;
+  text-align: start;
 }
 
 /* Social Media Icons */
 .nw-social-icons {
-    margin-top: 20px;
-    text-align: center;
+  margin-top: 20px;
+  text-align: center;
 }
 
 .social-icon {
-    display: inline-block;
-    background: rgba(255, 255, 255, 0.2);
-    color: white;
-    font-size: 20px;
-    padding: 12px;
-    margin: 0 8px;
-    border-radius: 50%;
-    transition: all 0.3s ease-in-out;
+  display: inline-block;
+  background: rgba(255, 255, 255, 0.2);
+  color: white;
+  font-size: 20px;
+  padding: 12px;
+  margin: 0 8px;
+  border-radius: 50%;
+  transition: all 0.3s ease-in-out;
 }
 
 .social-icon:hover {
-    background: rgba(255, 255, 255, 0.5);
-    transform: scale(1.1);
+  background: rgba(255, 255, 255, 0.5);
+  transform: scale(1.1);
 }
 
 /* Contact Form */
 .nw-php-email-form {
-    display: flex;
-    flex-direction: column;
+  display: flex;
+  flex-direction: column;
 }
 
-.nw-php-email-form input[type=text],
-.nw-php-email-form input[type=email],
+.nw-php-email-form input[type="text"],
+.nw-php-email-form input[type="email"],
 .nw-php-email-form textarea {
-    background: rgba(255, 255, 255, 0.2);
-    border: none;
-    color: white;
-    padding: 15px;
-    font-size: 14px;
-    width: 100%;
+  background: rgba(255, 255, 255, 0.2);
+  border: none;
+  color: white;
+  padding: 15px;
+  font-size: 14px;
+  width: 100%;
 }
 
 .nw-php-email-form input::placeholder,
 .nw-php-email-form textarea::placeholder {
-    color: rgba(255, 255, 255, 0.7);
+  color: rgba(255, 255, 255, 0.7);
 }
 
 .nw-php-email-form textarea {
-    resize: none;
+  resize: none;
 }
 
-.nw-php-email-form button[type=submit] {
-    color: white;
-    background: rgba(255, 255, 255, 0.3);
-    padding: 12px 30px;
-    border-radius: 50px;
-    transition: 0.3s;
-    border: none;
-    cursor: pointer;
+.nw-php-email-form button[type="submit"] {
+  color: white;
+  background: rgba(255, 255, 255, 0.3);
+  padding: 12px 30px;
+  border-radius: 50px;
+  transition: 0.3s;
+  border: none;
+  cursor: pointer;
 }
 
-.nw-php-email-form button[type=submit]:hover {
-    background: rgba(255, 255, 255, 0.5);
+.nw-php-email-form button[type="submit"]:hover {
+  background: rgba(255, 255, 255, 0.5);
 }
 
 /* Alignment & Responsiveness */
 .nw-contact .row {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: stretch;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: stretch;
 }
 
-.nw-contact .col-lg-4, .nw-contact .col-lg-8 {
-    padding: 15px;
+.nw-contact .col-lg-4,
+.nw-contact .col-lg-8 {
+  padding: 15px;
 }
 
 @media (min-width: 768px) {
-    .nw-contact .col-lg-4, .nw-contact .col-lg-8 {
-        max-width: 48%;
-    }
+  .nw-contact .col-lg-4,
+  .nw-contact .col-lg-8 {
+    max-width: 48%;
+  }
 }
-
 
