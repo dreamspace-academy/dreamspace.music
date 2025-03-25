@@ -1,3 +1,13 @@
+// preloder
+document.addEventListener("DOMContentLoaded", function() {
+  setTimeout(() => {
+      document.querySelector(".spinner").style.display = "none"; // Hide the preloader
+      document.getElementById("content").style.display = "block"; // Show the content
+  }, 1000); // Adjust the timeout as needed (1 second here)
+});
+
+
+
 // Initialize AOS (Animate On Scroll)
 document.addEventListener("DOMContentLoaded", () => {
   // Initialize AOS
