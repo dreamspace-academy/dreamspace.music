@@ -1973,16 +1973,18 @@ a:hover {
   padding: 2.5rem auto 8rem;
   position: relative;
   z-index: 1;
+  margin-top: 50px;
+  margin-bottom: 100px;
 }
 
 .contact-info {
   background-color: rgba(255, 255, 255, 0.1);
   backdrop-filter: blur(5px);
   -webkit-backdrop-filter: blur(5px);
-  padding: 5rem 2rem;
+  padding: 40px;
   border-radius: 1rem;
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-  height: 100%;
+  height: 470px;
   border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
@@ -2000,7 +2002,7 @@ a:hover {
   left: 0;
   width: 50px;
   height: 3px;
-  background-color: var(--primary-color);
+  background-color: white;
 }
 
 .contact-item {
@@ -2012,8 +2014,8 @@ a:hover {
 .contact-icon {
   width: 50px;
   height: 50px;
-  background-color: var(--primary-color);
-  color: white;
+  background-color: white;
+  color: #3b0439;
   border-radius: 50%;
   display: flex;
   align-items: center;
@@ -2063,7 +2065,8 @@ a:hover {
 }
 
 .submit-btn {
-  background-color: var(--primary-color);
+  background-color: white;
+  color: #3b0439;
   border: none;
   padding: 0.75rem 2rem;
   font-weight: 600;
@@ -2073,7 +2076,8 @@ a:hover {
 }
 
 .submit-btn:hover {
-  background-color: var(--secondary-color);
+  background-color: black;
+  color: white;
   transform: translateY(-5px);
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
 }
@@ -2097,7 +2101,7 @@ a:hover {
 }
 
 .social-links a:hover {
-  background-color: var(--primary-color);
+  background-color: black;
   color: white;
   transform: translateY(-5px);
 }
