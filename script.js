@@ -6,8 +6,6 @@ document.addEventListener("DOMContentLoaded", function() {
   }, 1000); // Adjust the timeout as needed (1 second here)
 });
 
-
-
 // Initialize AOS (Animate On Scroll)
 document.addEventListener("DOMContentLoaded", () => {
   // Initialize AOS
@@ -34,7 +32,38 @@ document.addEventListener("DOMContentLoaded", () => {
       navbar.classList.remove("scrolled")
       footer.style.backgroundColor = "transparent"
     }
+    
+    // Update active nav link based on scroll position
+    updateActiveNavLink();
   })
+
+  // Function to update active nav link based on scroll position
+  function updateActiveNavLink() {
+    const sections = document.querySelectorAll("section[id]");
+    const navLinks = document.querySelectorAll(".navbar-nav .nav-link");
+    
+    let currentSection = "";
+    
+    sections.forEach(section => {
+      const sectionTop = section.offsetTop - 150;
+      const sectionHeight = section.offsetHeight;
+      
+      if (window.scrollY >= sectionTop && window.scrollY < sectionTop + sectionHeight) {
+        currentSection = section.getAttribute("id");
+      }
+    });
+    
+    navLinks.forEach(link => {
+      link.classList.remove("active");
+      const href = link.getAttribute("href");
+      if (href && href.includes(currentSection)) {
+        link.classList.add("active");
+      } else if (currentSection === "" && href === "#header") {
+        // If at the top of the page, highlight home
+        link.classList.add("active");
+      }
+    });
+  }
 
   // Video Modal Functionality
   const playButtons = document.querySelectorAll(".play-button")
@@ -83,6 +112,9 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     })
   })
+
+  // Call updateActiveNavLink on page load
+  updateActiveNavLink();
 
   // Animate elements when they come into view
   const animateElements = document.querySelectorAll(".animate-on-scroll")
@@ -186,8 +218,8 @@ document.addEventListener("DOMContentLoaded", () => {
     // For mobile - prevent click from toggling dropdown
     aboutLink.addEventListener("click", (e) => {
       if (window.innerWidth >= 992) {
-        // On desktop, clicking "About" goes to about.html
-        window.location.href = "about.html"
+        // On desktop, clicking "About" goes to about section
+        window.location.href = "#about"
       }
     })
 
@@ -208,24 +240,6 @@ document.addEventListener("DOMContentLoaded", () => {
     })
   }
 })
-
-// document.addEventListener("DOMContentLoaded", function () {
-//   const navbar = document.querySelector(".navbar");
-//   const logo = document.querySelector(".navbar-brand img.logo");
-//   const navLinks = document.querySelectorAll(".navbar-dark .navbar-nav .nav-link");
-
-//   window.addEventListener("scroll", function () {
-//       if (window.scrollY > 50) {
-//           navbar.classList.add("scrolled");
-//           logo.src = "./assets/images/logo.png"; // Change to colored logo
-//           navLinks.forEach(link => link.style.color = "purple");
-//       } else {
-//           navbar.classList.remove("scrolled");
-//           logo.src = "./assets/images/wite.png"; // Change back to white logo
-//           navLinks.forEach(link => link.style.color = "white");
-//       }
-//   });
-// });
 
 // Cursor animation with scroll position fix
 document.addEventListener('DOMContentLoaded', () => {

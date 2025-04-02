@@ -397,6 +397,7 @@ a:hover {
   padding: 0.5rem 0.8rem;
   position: relative;
   text-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+  transition: color 0.3s ease;
 }
 
 .navbar-dark .navbar-nav .nav-link::after {
@@ -407,7 +408,7 @@ a:hover {
   width: 0;
   height: 2px;
   background-color: white;
-  transition: var(--transition);
+  transition: width 0.3s ease, transform 0.3s ease;
   transform: translateX(-50%);
 }
 
@@ -456,7 +457,7 @@ a:hover {
 /* Add hover effect with slight movement */
 .dropdown-item:hover {
   background-color: white;
-  color: #3b0439
+  color: #3b0439;
   transform: translateX(8px);
 }
 
@@ -2591,3 +2592,173 @@ a:hover {
     padding: 0.6rem 1.5rem;
   }
 }
+
+/* Video modal styling */
+.modal-content {
+  background-color: rgba(1, 1, 1, 0.9);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.modal-header {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.modal-header .modal-title {
+  color: white;
+}
+
+.modal-header .btn-close {
+  color: white;
+  filter: invert(1) brightness(200%);
+}
+
+.modal-body {
+  padding: 1rem;
+}
+
+/* Responsive iframe container */
+.ratio {
+  position: relative;
+  width: 100%;
+  height: 0;
+  padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
+}
+
+.ratio iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+/* Mission & Vision section styling for services page */
+.mission-vision-section {
+  padding: 2rem 0;
+  position: relative;
+  z-index: 1;
+}
+
+.mission-vision-container {
+  display: flex;
+  justify-content: space-between;
+  gap: 30px;
+  flex-wrap: wrap;
+}
+
+.mission-card, .vision-card {
+  flex: 1;
+  min-width: 300px;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  padding: 2rem;
+  border-radius: 1rem;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.mission-card h2, .vision-card h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  color: white;
+  text-align: center;
+}
+
+.mission-card p, .vision-card p {
+  color: rgba(255, 255, 255, 0.9);
+  line-height: 1.6;
+  text-align: justify;
+}
+
+@media (max-width: 768px) {
+  .mission-vision-container {
+    flex-direction: column;
+  }
+  
+  .mission-card, .vision-card {
+    width: 100%;
+    min-width: auto;
+    margin-bottom: 20px;
+  }
+}
+/* Add these styles to your existing CSS file */
+
+/* Navbar active link indicator */
+.navbar-dark .navbar-nav .nav-link {
+  color: white !important;
+  font-weight: 500;
+  padding: 0.5rem 0.8rem;
+  position: relative;
+  text-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+  transition: color 0.3s ease;
+}
+
+.navbar-dark .navbar-nav .nav-link::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  width: 0;
+  height: 2px;
+  background-color: white;
+  transition: width 0.3s ease, transform 0.3s ease;
+  transform: translateX(-50%);
+}
+
+.navbar-dark .navbar-nav .nav-link:hover::after,
+.navbar-dark .navbar-nav .nav-link.active::after {
+  width: 80%;
+}
+
+
+        /* Additional styles for mission vision section */
+        .mission-vision-section {
+            padding: 2rem 0;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .mission-vision-container {
+            display: flex;
+            justify-content: space-between;
+            gap: 30px;
+            flex-wrap: wrap;
+        }
+        
+        .mission-card, .vision-card {
+            flex: 1;
+            min-width: 300px;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(5px);
+            -webkit-backdrop-filter: blur(5px);
+            padding: 2rem;
+            border-radius: 1rem;
+            /* Remove border */
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .mission-card h2, .vision-card h2 {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+            color: white;
+            text-align: center;
+        }
+        
+        .mission-card p, .vision-card p {
+            color: rgba(255, 255, 255, 0.9);
+            line-height: 1.6;
+            text-align: justify;
+        }
+        
+        @media (max-width: 768px) {
+            .mission-vision-container {
+                flex-direction: column;
+            }
+            
+            .mission-card, .vision-card {
+                width: 100%;
+                min-width: auto;
+                margin-bottom: 20px;
+            }
+        }

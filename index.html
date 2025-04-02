@@ -36,7 +36,7 @@
     <!-- Navigation Bar -->
     <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
         <div class="container">
-            <a class="navbar-brand" href="index.html">
+            <a class="navbar-brand" href="#header">
                 <img src="./assets/images/wite.png" alt="DreamSpace Records Logo" class="logo">
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
@@ -46,7 +46,7 @@
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item">
-                        <a class="nav-link active" href="index.html">Home</a>
+                        <a class="nav-link active" href="#header">Home</a>
                     </li>
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#about" id="navbarDropdown" role="button">
@@ -63,7 +63,7 @@
                         <a class="nav-link" href="#music-videos">Music Videos</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="services.html">Services</a>
+                        <a class="nav-link" href="#services">Services</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#contact">Contact</a>
@@ -74,7 +74,7 @@
     </nav>
 
     <!-- Hero Section with Carousel -->
-    <section class="hero-section">
+    <section class="hero-section" id="header">
         <div id="heroCarousel" class="carousel slide" data-bs-ride="carousel">
             <div class="carousel-inner">
                 <div class="carousel-item active">
@@ -165,7 +165,7 @@
             </div>
 
             <div class="text-center mt-5" data-aos="fade-up">
-                <a href="about.html" class="watch-now2">Learn More About Us</a>
+                <a href="#about" class="watch-now2">Learn More About Us</a>
             </div>
         </div>
     </section>
@@ -189,12 +189,11 @@
                         </div>
                         <div class="music-info">
                             <p class="music-title">Paadum Meene</p>
-                            <p class="music-description">Dinoj M’s 'Paadum Meene' blends Singing Fish sounds with
+                            <p class="music-description">Dinoj M's 'Paadum Meene' blends Singing Fish sounds with
                                 Carnatic music and Hip-Hop, reflecting Batticaloa's rich heritage.</p>
                         </div>
                         <div class="music-footer">
-                            <a href="https://www.youtube.com/watch?v=NtFTQhANtqE" target="_blank"
-                                class="watch-now">Watch Now</a>
+                            <a href="#" class="watch-now" data-bs-toggle="modal" data-bs-target="#videoModal1">Watch Now</a>
                         </div>
                     </div>
                 </div>
@@ -209,8 +208,7 @@
                                 identity and resilience with a bold, inspiring message.</p>
                         </div>
                         <div class="music-footer">
-                            <a href="https://www.youtube.com/watch?v=OWpcsVsLLLg" target="_blank"
-                                class="watch-now">Watch Now</a>
+                            <a href="#" class="watch-now" data-bs-toggle="modal" data-bs-target="#videoModal2">Watch Now</a>
                         </div>
                     </div>
                 </div>
@@ -225,8 +223,7 @@
                                 "Mellidai Mettu," a tribute to the strength and resilience of women.</p>
                         </div>
                         <div class="music-footer">
-                            <a href="https://www.youtube.com/watch?v=3OmP2C9aSSg" target="_blank"
-                                class="watch-now">Watch Now</a>
+                            <a href="#" class="watch-now" data-bs-toggle="modal" data-bs-target="#videoModal3">Watch Now</a>
                         </div>
                     </div>
                 </div>
@@ -237,6 +234,55 @@
             </div>
         </div>
     </section>
+
+    <!-- Video Modals -->
+    <div class="modal fade" id="videoModal1" tabindex="-1" aria-labelledby="videoModalLabel1" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="videoModalLabel1">Paadum Meene</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="ratio ratio-16x9">
+                        <iframe src="https://www.youtube.com/embed/NtFTQhANtqE" title="Paadum Meene" allowfullscreen></iframe>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="videoModal2" tabindex="-1" aria-labelledby="videoModalLabel2" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="videoModalLabel2">Aram Sei</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="ratio ratio-16x9">
+                        <iframe src="https://www.youtube.com/embed/OWpcsVsLLLg" title="Aram Sei" allowfullscreen></iframe>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="videoModal3" tabindex="-1" aria-labelledby="videoModalLabel3" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="videoModalLabel3">Mellidai Mettu</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="ratio ratio-16x9">
+                        <iframe src="https://www.youtube.com/embed/3OmP2C9aSSg" title="Mellidai Mettu" allowfullscreen></iframe>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <!-- Services Section -->
     <section id="services" class="services-section">
@@ -416,10 +462,7 @@
         <div class="cursor"></div>
     </div>
 
-    </style>
-
-
-    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
+    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script src="script.js"></script>
