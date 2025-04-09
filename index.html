@@ -170,6 +170,8 @@
         </div>
     </section>
 
+    
+
     <!-- Latest Music Videos Section -->
     <section class="latest-videos-section" id="music-videos">
         <div class="container">
@@ -345,6 +347,129 @@
         </div>
     </section>
 
+    <!-- Explore the Magic Section -->
+    <section id="explore-magic" class="explore-magic-section">
+        <div class="container">
+            <div class="section-title">
+                <h2>Explore the Magic</h2>
+                <div class="sound-wave">
+                    <span></span><span></span><span></span><span></span><span></span>
+                </div>
+                <p>Immerse yourself in our sonic universe</p>
+            </div>
+            
+            <div class="explore-container">
+                <div class="main-image-container" data-aos="fade-right">
+                    <img src="./assets/images/gallery/g-1.jpg" alt="Music Studio" class="main-image">
+                </div>
+                
+                <div class="audio-notes-container" data-aos="fade-left">
+                    <div class="audio-note">
+                        <div class="audio-thumbnail">
+                            <img src="./assets/images/audio-section/kotu.jpg" alt="Audio Note 1">
+                        </div>
+                        <div class="audio-content">
+                            <h3>Kottu Roti</h3>
+                            <p>Dinoj M’s original celebrates Batticaloa’s beloved Kottu Roti, capturing students' longing for its authentic taste and its rise as a global sensation.</p>
+                            <div class="audio-player">
+                                <audio id="audio1" preload="metadata">
+                                    <source src="./assets/audios/Kottu Roti.mp3" type="audio/mpeg">
+                                    Your browser does not support the audio element.
+                                </audio>
+                                <div class="player-controls">
+                                    <button class="play-pause-btn" data-audio="audio1">
+                                        <i class="fas fa-play"></i>
+                                    </button>
+                                    <div class="progress-container">
+                                        <div class="progress-bar" id="progress1"></div>
+                                    </div>
+                                    <div class="time-display">
+                                        <span class="current-time" id="current-time1">0:00</span>
+                                        <span class="duration" id="duration1">0:00</span>
+                                    </div>
+                                    <button class="volume-btn" data-audio="audio1">
+                                        <i class="fas fa-volume-up"></i>
+                                    </button>
+                                    <div class="volume-slider" id="volume-slider1">
+                                        <div class="volume-progress" id="volume-progress1"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="audio-note">
+                        <div class="audio-thumbnail">
+                            <img src="./assets/images/aram-sei.jpg" alt="Audio Note 2">
+                        </div>
+                        <div class="audio-content">
+                            <h3>Aram Sei</h3>
+                            <p>SajaS' rap 'Aram Sei' electrifies listeners, celebrating Tamil identity and resilience with a bold, inspiring message.</p>
+                            <div class="audio-player">
+                                <audio id="audio2" preload="metadata">
+                                    <source src="./assets/audios/Aram Sei.mp3" type="audio/mpeg">
+                                    Your browser does not support the audio element.
+                                </audio>
+                                <div class="player-controls">
+                                    <button class="play-pause-btn" data-audio="audio2">
+                                        <i class="fas fa-play"></i>
+                                    </button>
+                                    <div class="progress-container">
+                                        <div class="progress-bar" id="progress2"></div>
+                                    </div>
+                                    <div class="time-display">
+                                        <span class="current-time" id="current-time2">0:00</span>
+                                        <span class="duration" id="duration2">0:00</span>
+                                    </div>
+                                    <button class="volume-btn" data-audio="audio2">
+                                        <i class="fas fa-volume-up"></i>
+                                    </button>
+                                    <div class="volume-slider" id="volume-slider2">
+                                        <div class="volume-progress" id="volume-progress2"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="audio-note">
+                        <div class="audio-thumbnail">
+                            <img src="./assets/images/audio-section/birds.png" alt="Audio Note 3">
+                        </div>
+                        <div class="audio-content">
+                            <h3>Paravaigal Gaanam</h3>
+                            <p>‘Paravaigal Gaanam’ by Dinoj M is a climate-positive song inspired by the calls of Sri Lanka's endangered endemic birds.</p>
+                            <div class="audio-player">
+                                <audio id="audio3" preload="metadata">
+                                    <source src="./assets/audios/paaravaigal-gaanam.mp3" type="audio/mpeg">
+                                    Your browser does not support the audio element.
+                                </audio>
+                                <div class="player-controls">
+                                    <button class="play-pause-btn" data-audio="audio3">
+                                        <i class="fas fa-play"></i>
+                                    </button>
+                                    <div class="progress-container">
+                                        <div class="progress-bar" id="progress3"></div>
+                                    </div>
+                                    <div class="time-display">
+                                        <span class="current-time" id="current-time3">0:00</span>
+                                        <span class="duration" id="duration3">0:00</span>
+                                    </div>
+                                    <button class="volume-btn" data-audio="audio3">
+                                        <i class="fas fa-volume-up"></i>
+                                    </button>
+                                    <div class="volume-slider" id="volume-slider3">
+                                        <div class="volume-progress" id="volume-progress3"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Contact Section -->
     <section id="contact" class="contact-section">
         <div class="container">
@@ -467,8 +592,122 @@
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script src="script.js"></script>
 
-    <!-- Counter Animation Script -->
+    <!-- Audio Player Script -->
     <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Initialize audio players
+            initAudioPlayers();
+        });
+
+        function initAudioPlayers() {
+            // Get all play-pause buttons
+            const playPauseBtns = document.querySelectorAll('.play-pause-btn');
+            const volumeBtns = document.querySelectorAll('.volume-btn');
+            let currentlyPlaying = null;
+
+            // Add event listeners to each play-pause button
+            playPauseBtns.forEach(btn => {
+                const audioId = btn.getAttribute('data-audio');
+                const audio = document.getElementById(audioId);
+                const progressBar = document.getElementById('progress' + audioId.slice(-1));
+                const currentTimeDisplay = document.getElementById('current-time' + audioId.slice(-1));
+                const durationDisplay = document.getElementById('duration' + audioId.slice(-1));
+                
+                // Set up audio metadata loaded event
+                audio.addEventListener('loadedmetadata', function() {
+                    const duration = formatTime(audio.duration);
+                    durationDisplay.textContent = duration;
+                });
+                
+                // Set up time update event
+                audio.addEventListener('timeupdate', function() {
+                    const currentTime = formatTime(audio.currentTime);
+                    currentTimeDisplay.textContent = currentTime;
+                    
+                    const progressPercent = (audio.currentTime / audio.duration) * 100;
+                    progressBar.style.width = progressPercent + '%';
+                    
+                    if (audio.currentTime === audio.duration) {
+                        btn.innerHTML = '<i class="fas fa-play"></i>';
+                    }
+                });
+                
+                // Set up progress bar click event
+                const progressContainer = progressBar.parentElement;
+                progressContainer.addEventListener('click', function(e) {
+                    const clickPosition = (e.offsetX / this.offsetWidth);
+                    audio.currentTime = clickPosition * audio.duration;
+                });
+                
+                // Set up play-pause button click event
+                btn.addEventListener('click', function() {
+                    if (audio.paused) {
+                        // Pause any currently playing audio
+                        if (currentlyPlaying && currentlyPlaying !== audio) {
+                            currentlyPlaying.pause();
+                            const otherBtn = document.querySelector(`.play-pause-btn[data-audio="${currentlyPlaying.id}"]`);
+                            otherBtn.innerHTML = '<i class="fas fa-play"></i>';
+                        }
+                        
+                        audio.play();
+                        btn.innerHTML = '<i class="fas fa-pause"></i>';
+                        currentlyPlaying = audio;
+                    } else {
+                        audio.pause();
+                        btn.innerHTML = '<i class="fas fa-play"></i>';
+                        currentlyPlaying = null;
+                    }
+                });
+            });
+            
+            // Add event listeners to volume buttons
+            volumeBtns.forEach(btn => {
+                const audioId = btn.getAttribute('data-audio');
+                const audio = document.getElementById(audioId);
+                const volumeSlider = document.getElementById('volume-slider' + audioId.slice(-1));
+                const volumeProgress = document.getElementById('volume-progress' + audioId.slice(-1));
+                
+                // Set initial volume
+                audio.volume = 0.7;
+                volumeProgress.style.width = (audio.volume * 100) + '%';
+                
+                // Toggle volume slider visibility
+                btn.addEventListener('click', function() {
+                    volumeSlider.classList.toggle('active');
+                });
+                
+                // Set up volume slider click event
+                volumeSlider.addEventListener('click', function(e) {
+                    const newVolume = e.offsetX / this.offsetWidth;
+                    audio.volume = newVolume;
+                    volumeProgress.style.width = (newVolume * 100) + '%';
+                    
+                    // Update volume icon
+                    if (newVolume === 0) {
+                        btn.innerHTML = '<i class="fas fa-volume-mute"></i>';
+                    } else if (newVolume < 0.5) {
+                        btn.innerHTML = '<i class="fas fa-volume-down"></i>';
+                    } else {
+                        btn.innerHTML = '<i class="fas fa-volume-up"></i>';
+                    }
+                });
+                
+                // Hide volume slider when clicking elsewhere
+                document.addEventListener('click', function(e) {
+                    if (!btn.contains(e.target) && !volumeSlider.contains(e.target)) {
+                        volumeSlider.classList.remove('active');
+                    }
+                });
+            });
+        }
+        
+        // Helper function to format time in MM:SS
+        function formatTime(seconds) {
+            const minutes = Math.floor(seconds / 60);
+            const remainingSeconds = Math.floor(seconds % 60);
+            return `${minutes}:${remainingSeconds < 10 ? '0' : ''}${remainingSeconds}`;
+        }
+
         // Counter animation function
         function startCounters() {
             const counters = document.querySelectorAll('.counter');
